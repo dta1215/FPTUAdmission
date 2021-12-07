@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="shortcut icon" type="image/png" href="https://animaproject.s3.amazonaws.com/home/favicon.png">
+    <link rel="stylesheet" href="./css/login.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<style>
+    @import url("https://fonts.googleapis.com/css?family=Roboto:400,700");
+
+    .content {
+        position: relative;
+        top: 50px;
+        height: 660px;
+    }
+    .content-background {
+        display: block;
+        height: 100%;
+        object-fit: none;
+    }
+    .login-Form {
+        position: absolute;
+        display: block;
+        width: 80%;
+        top: 20px;
+        margin: auto;
+        right: 120px;
+        padding: 20px;
+        background: #ffffff;
+        box-shadow: 10px 10px 10px #00000026;
+        mix-blend-mode: normal;
+        border-radius: 14px;
+    }
+    .login-Form-InputArea {
+        width: 100%;
+        margin: auto;
+        letter-spacing: 0.00px;
+        line-height: normal;
+        mix-blend-mode: normal;
+    }
+    .register-Form-InputArea{
+        width: 100%;
+    }
+    .login-Form-Description{
+        padding-top: 8px;
+        width: 50%;
+        text-align: center;
+        margin: auto;
+    }
+    .navbar {
+        height: 52px;
+        background: #e98206 !important;
+    }
+
+    .main-Link-Container {
+        display: flex;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: -6px;
+        flex-wrap: wrap;
+        padding: 15px 0px;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .navLink {
+        color: var(--text-color) !important;
+    }
+
+    .content {
+        position: relative;
+        top: 0;
+        display: block;
+    }
+
+    .secondary-Header2 {
+        background-color: #f27125;
+        position: static;
+        width: 100%;
+        height: none;
+        color: #FFFFFF;
+    }
+
+    /* Mobile mobile */
+    @media only screen and (max-width: 600px) {
+        .navbar {
+            height: auto;
+        }
+
+        .bg-light {
+            background-color: #e98206 !important;
+        }
+
+        .navLink {
+            text-decoration: none;
+            color: #FFFFFF !important;
+            font-family: "Roboto", Helvetica;
+        }
+
+        .main-Link-Container {
+            display: flex;
+            position: relative;
+            width: 100%;
+            flex-wrap: wrap;
+            padding: 15px 0px;
+            flex-direction: row;
+            justify-content: flex-start;
+            display: inline-block;
+        }
+
+        .first-Header {
+            height: 100px;
+            padding: 0px 40px;
+        }
+
+        #header-Logo {
+            position: relative;
+            left: 18%;
+        }
+
+        .first-Header-Right {
+            display: block;
+            width: auto;
+            text-align: center;
+            position: static;
+        }
+
+        .content {
+            position: relative;
+            top: 0px;
+            height: 1070px;
+        }
+
+        .content-background {
+            display: block;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .login-Form-InputArea {
+            width: 100%;
+        }
+
+        .login-Form {
+            position: absolute;
+            left: 4px;
+            top: 20px;
+            width: 98%;
+            margin: auto;
+            padding: 12px;
+            display: block;
+            font-size: 17px;
+            border-radius: 14px;
+            background: #ffffff;
+            mix-blend-mode: normal;
+            box-shadow: 10px 10px 10px #00000026;
+            font-family: "Roboto", Helvetica !important;
+        }
+        .login-Form-Description {
+            width: 100%;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 0px;
+            background: #333333;
+            padding: 10px 0;
+            font-family: "Roboto", Helvetica !important;
+        }
+
+        .aboutArea {
+            font-family: "Roboto", Helvetica !important;
+            padding: 20px 20px;
+        }
+    }
+
+    /* Tablet tablet */
+    @media (min-width: 600px) and (max-width: 1024px) {
+        .navbar {
+            height: auto;
+        }
+        .main-Link-Container {
+            display: flex;
+            position: relative;
+            width: 100%;
+            left: 0;
+            top: -6px;
+            flex-wrap: wrap;
+            padding: 15px 0px;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+        .content {
+            position: relative;
+            top: 0px;
+            height: 1100px;
+        }
+        .content-background {
+            position: absolute;
+            display: block;
+            height: 100%;
+            object-fit: fill;
+        }
+        .login-Form {
+            position: relative;
+            display: block;
+            width: 95%;
+            top: 20px;
+            left: 0%;
+            margin: auto;
+            padding: 20px;
+            background: #ffffff;
+            box-shadow: 10px 10px 10px #00000026;
+            mix-blend-mode: normal;
+            border-radius: 14px;
+        }
+        .login-Form-Description {
+            width: 100%;
+        }
+    }
+</style>
+<body>
+    <div class="">
+        <header>
+            <div class="first-Header">
+                <div class="first-Header-content">
+                    <img id="header-Logo" src="./images/headerLogo.svg" alt="">
+                    <div class="first-Header-Right">
+                        <div class="mailArea">
+                            <img src="./icons/mailbox.svg" alt="">
+                            <text class="navPhone">tuyensinh.hanoi@fpt.edu.vn</text>
+                        </div>
+                        <div class="phoneArea">
+                            <img src="./icons/phone.svg" alt="">
+                            <text class="navPhone">(024) 7300 5588</text>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="secondary-Header">
+                <ul class="main-Link-Container">
+                    <li><a class="navLink" href="#Thongtintuyensinh">THÔNG TIN TUYỂN SINH</a></li>
+                    <li><a class="navLink" href="#Chuongtrinhdaotao">CHƯƠNG TRÌNH ĐÀO TẠO</a></li>
+                    <li><a class="navLink" href="#Nghanhhoc">NGÀNH HỌC</a></li>
+                    <li><a class="navLink" href="#Cohoivieclam">CƠ HỘI VIỆC LÀM</a></li>
+                    <li><a class="navLink" href="#Cauhoithuonggap">CÁC CÂU HỎI THƯỜNG GẶP</a></li>
+                </ul>
+            </div> -->
+        </header>
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
+                aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0 main-Link-Container">
+                    <li class="nav-item active"><a class="navLink nav-link" href="#Thongtintuyensinh">THÔNG TIN TUYỂN
+                            SINH</a></li>
+                    <li class="nav-item active"><a class="navLink nav-link" href="#Chuongtrinhdaotao">CHƯƠNG TRÌNH ĐÀO
+                            TẠO</a></li>
+                    <li class="nav-item active"><a class="navLink nav-link" href="#Nghanhhoc">NGÀNH HỌC</a></li>
+                    <li class="nav-item active"><a class="navLink nav-link" href="#Cohoivieclam">CƠ HỘI VIỆC LÀM</a>
+                    </li>
+                    <li class="nav-item active"><a class="navLink nav-link" href="#Cauhoithuonggap">CÁC CÂU HỎI THƯỜNG
+                            GẶP</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="content">
+            <img class="content-background" src="./images/background.png" alt="">
+            <div class="login-Form">
+                <div class="login-Form-Logo">
+                    <img src="./images/formLogo.svg" alt="">
+                </div>
+                <div class="login-Form-Content">
+                    <h2 class="login-Form-Title" >Đăng Ký</h2>
+                    <!-- register-Form-InputArea -->
+                    <form class="login-Form-InputArea ">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="Name">Họ và tên</label> <text class="requiredField">(*)</text>
+                                    <input type="text" class="form-control" id="Name"  placeholder="Nhập họ và tên">
+                                </div>
+                                <div class="form-group">
+                                    <label for="School">Trường THPT </label><text class="requiredField">(*)</text>
+                                    <input class="form-control" type="text" name="School" list="SchoolName" placeholder="Nhập tên trường THPT">
+                                    <datalist id="SchoolName">
+                                        <option value="Boston">
+                                        <option value="Cambridge">
+                                    </datalist>
+                                </div>
+                                <div class="form-group">
+                                    <label for="Born">Ngày sinh</label> <text class="requiredField">(*)</text>
+                                    <input type="date" class="form-control" id="Born" >
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="Email">Email</label> <text class="requiredField">(*)</text>
+                                    <input type="email" class="form-control" id="Email"  placeholder="Nhập email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="Password">Mật khẩu</label>
+                                    <input type="password" class="form-control" id="Password"  placeholder="Nhập mật khẩu">
+                                    <span class="showhidePassword"><img src="./icons/eyes.svg" alt=""></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="RetypePassword">Nhập lại mật khẩu</label>
+                                    <input type="password" class="form-control" id="RetypePassword"  placeholder="Nhập lại mật khẩu">
+                                    <span class="showhidePassword"><img src="./icons/eyes.svg" alt=""></span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="City">Tỉnh/ Thành phố</label> <text class="requiredField">(*)</text>
+                                    <!-- Select list -->
+                                    <select class="form-control" required="" name="province">
+                                        <option value="" hidden>Tỉnh/ Thành phố</option>
+                                        <option value="51">An Giang</option>
+                                        <option value="52">Bà Rịa-Vũng Tàu</option>
+                                        <option value="18">Bắc Giang</option>
+                                        <option value="11">Bắc Kạn</option>
+                                        <option value="60">Bạc Liêu</option>
+                                        <option value="19">Bắc Ninh</option>
+                                        <option value="56">Bến Tre</option>
+                                        <option value="44">Bình Dương</option>
+                                        <option value="37">Bình Định</option>
+                                        <option value="43">Bình Phước</option>
+                                        <option value="47">Bình Thuận</option>
+                                        <option value="61">Cà Mau</option>
+                                        <option value="55">Cần Thơ</option>
+                                        <option value="6">Cao Bằng</option>
+                                        <option value="4">Đà Nẵng</option>
+                                        <option value="40">Đắk Lắk</option>
+                                        <option value="63">Đăk Nông</option>
+                                        <option value="62">Điện Biên</option>
+                                        <option value="48">Đồng Nai</option>
+                                        <option value="50">Đồng Tháp</option>
+                                        <option value="38">Gia Lai</option>
+                                        <option value="5">Hà Giang</option>
+                                        <option value="24">Hà Nam</option>
+                                        <option value="1">Hà Nội</option>
+                                        <option value="30">Hà Tĩnh</option>
+                                        <option value="21">Hải Dương</option>
+                                        <option value="3">Hải Phòng</option>
+                                        <option value="64">Hậu Giang</option>
+                                        <option value="23">Hoà Bình</option>
+                                        <option value="22">Hưng Yên</option>
+                                        <option value="41">Khánh Hoà</option>
+                                        <option value="54">Kiên Giang</option>
+                                        <option value="36">Kon Tum</option>
+                                        <option value="7">Lai Châu</option>
+                                        <option value="42">Lâm Đồng</option>
+                                        <option value="10">Lạng Sơn</option>
+                                        <option value="8">Lào Cai</option>
+                                        <option value="49">Long An</option>
+                                        <option value="25">Nam Định</option>
+                                        <option value="29">Nghệ An</option>
+                                        <option value="27">Ninh Bình</option>
+                                        <option value="45">Ninh Thuận</option>
+                                        <option value="15">Phú Thọ</option>
+                                        <option value="39">Phú Yên</option>
+                                        <option value="31">Quảng Bình</option>
+                                        <option value="34">Quảng Nam</option>
+                                        <option value="35">Quảng Ngãi</option>
+                                        <option value="17">Quảng Ninh</option>
+                                        <option value="32">Quảng Trị</option>
+                                        <option value="59">Sóc Trăng</option>
+                                        <option value="14">Sơn La</option>
+                                        <option value="46">Tây Ninh</option>
+                                        <option value="26">Thái Bình</option>
+                                        <option value="12">Thái Nguyên</option>
+                                        <option value="28">Thanh Hoá</option>
+                                        <option value="33">Thừa Thiên - Huế</option>
+                                        <option value="53">Tiền Giang</option>
+                                        <option value="2">TP. Hồ Chí Minh</option>
+                                        <option value="58">Trà Vinh</option>
+                                        <option value="9">Tuyên Quang</option>
+                                        <option value="57">Vĩnh Long</option>
+                                        <option value="16">Vĩnh Phúc</option>
+                                        <option value="13">Yên Bái</option>
+                                </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="PhoneNumber">Số điện thoại</label> <text class="requiredField">(*)</text>
+                                    <input type="text" class="form-control" id="PhoneNumber"  placeholder="Nhập số điện thoại">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="rememberme" >
+                            <label class="form-check-label" for="rememberme">Ghi nhớ đăng nhập</label>
+                        </div> -->
+                        <div class="whitespace-sm"></div>
+                        <button id="btnRegister" type="submit" class="">Đăng ký</button>
+                    </form>
+                    <div class="login-Form-Description">
+                        <text class="description">Một mã OTP sẽ được gửi tới số điện thoại của bạn. Sử dụng mã OTP đó để kích hoạt tài khoản và đăng nhập vào hệ thống ngay khi nhận được.</text>                     
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="aboutArea">
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="./images/FooterLogo.svg" alt="">
+                    <div class="whitespace-sm"></div>
+                    <div>© 2017 Bản quyền thuộc về Trường đại học FPT.</div>
+                </div>
+                <div class="col-md-4">
+                    <div class="whitespace-md"></div>
+                    <div class="placementTitle">Hà Nội</div>
+                    <div>Khu Giáo dục và Đào tạo – Khu Công nghệ cao Hòa Lạc – Km29 Đại lộ Thăng Long, Thạch Thất, TP. Hà Nội</div>
+                    <div><a href="#Phone" class="navLink navPhone">Điện thoại: (024) 73001866/ (024) 73005588</a></div>
+
+                    <!-- space area in outer HTML -->
+                    <div class="whitespace-md"></div>
+                    <div class="placementTitle">Hà Nội</div>
+                    <div>Lô E2a-7, Đường D1 Khu Công nghệ cao, P.Long Thạnh Mỹ, Q.9, TP.HCM</div>
+                    <div><a href="#Phone" class="navLink navPhone">Điện thoại: (028) 73001866/ (028) 73005588</a></div>
+                </div>
+                <div class="col-md-4">
+                    <div class="whitespace-md"></div>
+                    <div class="placementTitle">Đà Nẵng</div>
+                    <div>Khu Đô thị Công nghệ FPT, P. Hòa Hải, Q. Ngũ Hành Sơn, Tp. Đà Nẵng.
+                    </div>
+                    <div><a href="#Phone" class="navLink navPhone">Điện thoại: (0236) 7300999</a></div>
+
+                    <div class="whitespace-md"></div>
+                    <div class="placementTitle">Cần Thơ</div>
+                    <div>Số 600 đường Nguyễn Văn Cừ nối dài, Khu vực 6, phường An Bình, quận Ninh Kiều, TP. Cần Thơ</div>
+                    <div><a href="#Phone" class="navLink navPhone">Điện thoại: (0292) 7303636</a></div>
+                </div>
+            </div>
+            <div class="whitespace-md"></div>
+            <hr />
+            <div class="author">Developed by TinhvanOutsourcing</div>
+        </footer>
+    </div>
+
+</body>
+</html>
