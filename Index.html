@@ -50,6 +50,9 @@
 
     /* Mobile mobile */
     @media only screen and (max-width: 600px) {
+        header {
+            padding: 0;
+        }
         .first-Header {
             height: auto !important;
             padding: 4px 20px !important;
@@ -62,15 +65,7 @@
             position: relative !important;
             left: 0 !important;
         }
-        /* .first-Header-Right {
-            display: static;
-            width: static;
-            text-align: static;
-            position: absolute !important;
-            right: 0;
-            width: 230px !important;
-            top: 27px;
-        } */
+       
         .first-Header-Right {
             display: block;
             position: relative !important;
@@ -104,7 +99,7 @@
             position: relative;
             width: 100%;
             flex-wrap: wrap;
-            padding: 15px 0px;
+            padding: 15px 0px !important;
             flex-direction: row;
             justify-content: left;
             display: inline-block;
@@ -119,24 +114,21 @@
             position: relative;
             left: 18%;
         }
-
         .first-Header-Right {
             display: block;
             width: auto;
             text-align: center;
             position: static;
         }
-
         .content-background {
             display: block;
-            height: 100%;
-            object-fit: cover;
+            width: auto;
+            height: 806px;
+            object-fit: fill;
         }
-
         .login-Form-InputArea {
             width: 100%;
         }
-
         .login-Form {
             position: absolute;
             left: 4px;
@@ -169,10 +161,15 @@
 
     /* Tablet tablet */
     @media (min-width: 600px) and (max-width: 1024px) {
+        header {
+            padding: 0px 16px;
+        }
         .navbar {
             height: auto;
         }
-
+        .first-Header-Right {
+            width: auto;
+        }
         .main-Link-Container {
             display: flex;
             position: relative;
@@ -182,9 +179,56 @@
             flex-wrap: wrap;
             padding: 15px 0px;
             flex-direction: column;
-            justify-content: space-around;
+        }
+        .main-Link-Container {
+            padding: 15px 0 !important;
+        }
+        .content-background {
+            display: block;
+            height: 806px;
+            width: auto;
+            object-fit: fill;
+        }
+        .login-Form {
+            position: absolute;
+            top: 70px;
+            width: 98%;
+            height: auto;
+            right: 7px;
+            padding: 20px;
+            background: #ffffff;
+            box-shadow: 10px 10px 10px #00000026;
+            mix-blend-mode: normal;
+            border-radius: 14px;
+        }
+        .aboutArea {
+            padding: 50px 20px;
         }
     }
+    @media (min-width: 1024px) and (max-width: 1900px) {
+        header {
+            padding: 0 100px;
+        }
+        .main-Link-Container {
+            padding: 15px 90px !important;
+            justify-content: space-between !important;
+        }
+        .content-background {
+            display: block;
+            height: 806px;
+            object-fit: cover;
+        }
+        .login-Form {
+            top: 31px;
+            width: 463px;
+            right: 108px;
+            height: auto;
+        }
+        .aboutArea {
+            padding: 50px 100px;
+        }
+    }
+    
 </style>
 
 <body>
@@ -290,6 +334,7 @@
                     <div><a href="#Phone" class="navLink navPhone" >Điện thoại: (0236) 7300999</a></div>
 
                     <div class="whitespace-md"></div>
+                    <div class="whitespace-sm"></div>
 
                     <div class="placementTitle">Cần Thơ</div>
                     <div>Số 600 đường Nguyễn Văn Cừ nối dài, Khu vực 6, phường An Bình, quận Ninh Kiều, TP. Cần Thơ

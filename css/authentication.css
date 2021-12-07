@@ -17,14 +17,15 @@ body{
 /* Header */
 header{
     font-family: var(--fontfamily);
+    padding: 0 300px;
 }
 .first-Header{
     height: 72px;
-    padding: 0px 40px;
 }
 .first-Header-content {
     height: 100%;
     padding: 14px 0;
+    position: relative;
 }
 #header-Logo{
     position: absolute;
@@ -32,7 +33,7 @@ header{
 .first-Header-Right {
     position: absolute;
     width: 400px;
-    right: 40px;
+    right: 0;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -47,11 +48,14 @@ header{
 }
 .main-Link-Container {
     display: flex;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: -6px;
     flex-wrap: wrap;
+    padding: 15px 290px !important;
     flex-direction: row;
-    justify-content: space-between;
-    position: relative;
-    padding: 15px 40px;
+    justify-content: space-between !important;
 }
 ul,li{
     list-style: none;
@@ -61,24 +65,27 @@ ul,li{
 .content {
     position: relative;
     top: 50px;
+    min-height: 806px;
 }
 .content-background {
     display: block;
-    max-width: 100%;
+    width: 100%;
     object-fit: cover;
 }
 
 .login-Form {
     position: absolute;
-    top: 20px;
-    width: 470px;
-    right: 120px;
+    top: 70px;
+    height: 625px;
+    width: 539px;
+    right: 334px;
     padding: 20px;
     background: #ffffff;
     box-shadow: 10px 10px 10px #00000026;
     mix-blend-mode: normal;
     border-radius: 14px;
 }
+
 .login-Form-Logo{
     width: 100%;
     display: flex;
@@ -136,9 +143,8 @@ footer{
     color: #ffffff;
     font-family: var(--fontfamily);
     font-size: 14px;
-    font-style: normal;
     font-weight: 700;
-    padding: 40px 40px;
+    padding: 50px 300px;
 }
 
 .author{
