@@ -231,6 +231,9 @@ button.navbar-toggler{
     outline: solid #ffffffbd 1px;
     transform: scale(0.8);
 }
+button.navbar-toggler{
+    background: none;
+}
 .navbar-toggler:focus, .navbar-toggler:hover {
     text-decoration: none;
 }
