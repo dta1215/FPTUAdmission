@@ -226,3 +226,13 @@ a.nav-link:hover {
     right: -5px;
     float: right;
 }
+button.navbar-toggler{
+    transform: scale(0.7);
+    outline: none;
+    border: none;
+    background: #FFFFFF;
+}
+.navbar-toggler:focus, .navbar-toggler:hover {
+    text-decoration: none;
+    outline: none;
+}
