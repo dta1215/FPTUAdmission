@@ -76,8 +76,8 @@ ul,li{
 .login-Form {
     position: absolute;
     top: 70px;
-    height: 625px;
     width: 539px;
+    height: fit-content !important;
     right: 334px;
     padding: 20px;
     background: #ffffff;
@@ -196,8 +196,19 @@ input[type="checkbox"]{
 }
 
 li.nav-item:hover {
-    background: #ffffff33;
+    /* background: #ffffff33; */
 }
+a.nav-link {
+    background-image: linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#ffffff00, #c0c0c000);
+    background-size: 0 5px, auto;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    transition: all .2s ease-out;
+}
+a.nav-link:hover {
+    background-size: 100% 5px, auto;
+}
+
 #btnLogin:hover, #btnRegister:hover{
     background: #df6e2b;
 }
