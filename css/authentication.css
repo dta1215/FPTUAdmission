@@ -65,7 +65,7 @@ ul,li{
 .content {
     position: relative;
     top: 50px;
-    min-height: 806px;
+    min-height: 806px !important;
 }
 .content-background {
     display: block;
